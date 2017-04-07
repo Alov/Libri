@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
+   <children>
+      <TabPane layoutY="1.0" prefHeight="600.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Книги">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="bookTable" layoutX="8.0" layoutY="8.0" minWidth="-Infinity" onMouseClicked="#getSelectedBook" prefHeight="556.0" prefWidth="620.0">
+                          <columns>
+                            <TableColumn fx:id="bookID" minWidth="-Infinity" prefWidth="27.0" resizable="false" text="id" />
+                            <TableColumn fx:id="bookName" prefWidth="237.0" resizable="false" text="Название" />
+                              <TableColumn fx:id="bookAuthors" prefWidth="155.0" resizable="false" text="Авторы" />
+                              <TableColumn fx:id="bookYear" prefWidth="103.0" resizable="false" text="Год Выпуска" />
+                              <TableColumn fx:id="bookAviable" prefWidth="97.0" resizable="false" text="В наличии" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="searchBook" layoutX="636.0" layoutY="8.0" prefHeight="25.0" prefWidth="250.0" promptText="Поиск..." />
+                        <TextField fx:id="nameBookEdit" layoutX="636.0" layoutY="86.0" prefHeight="25.0" prefWidth="250.0" promptText="Название" />
+                        <TextField fx:id="authorBookEdit" layoutX="636.0" layoutY="118.0" prefHeight="25.0" prefWidth="250.0" promptText="Авторы" />
+                        <Button fx:id="addBook" layoutX="637.0" layoutY="187.0" mnemonicParsing="false" onAction="#addBookClick" prefHeight="25.0" prefWidth="75.0" text="Добавить" />
+                        <Button fx:id="saveBook" layoutX="725.0" layoutY="187.0" mnemonicParsing="false" onAction="#saveBookClick" prefHeight="25.0" prefWidth="75.0" text="Сохранить" />
+                        <Button fx:id="deleteBook" layoutX="811.0" layoutY="187.0" mnemonicParsing="false" onAction="#deleteBookClick" prefHeight="25.0" prefWidth="75.0" text="Удалить" />
+                        <CheckBox fx:id="aviableBookBox" layoutX="774.0" layoutY="154.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="112.0" text="В наличии" />
+                        <TextField fx:id="yearBookEdit" layoutX="637.0" layoutY="150.0" prefHeight="25.0" prefWidth="124.0" promptText="Год выпуска" />
+                        <Label fx:id="idLabel" layoutX="636.0" layoutY="63.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Читатели">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="readerTable" layoutX="8.0" layoutY="8.0" minWidth="-Infinity" onMouseClicked="#getSelectedReader" prefHeight="556.0" prefWidth="620.0">
+                           <columns>
+                              <TableColumn fx:id="readerID" minWidth="-Infinity" prefWidth="27.0" resizable="false" text="id" />
+                              <TableColumn fx:id="readerSecondName" prefWidth="155.0" resizable="false" text="Фамилия" />
+                              <TableColumn fx:id="readerFirstName" prefWidth="117.0" resizable="false" text="Имя" />
+                              <TableColumn fx:id="readerPatronymic" prefWidth="141.0" resizable="false" text="Отчество" />
+                              <TableColumn fx:id="readerLoanBook" prefWidth="88.0" resizable="false" text="Арендовано" />
+                              <TableColumn fx:id="readerReturnBook" prefWidth="90.0" text="Возвращено" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="searchReader" layoutX="636.0" layoutY="8.0" prefHeight="25.0" prefWidth="250.0" promptText="Поиск..." />
+                        <TextField fx:id="secondNameEdit" layoutX="636.0" layoutY="86.0" prefHeight="25.0" prefWidth="250.0" promptText="Фамилия" />
+                        <TextField fx:id="firstNameEdit" layoutX="636.0" layoutY="118.0" prefHeight="25.0" prefWidth="250.0" promptText="Имя" />
+                        <Button fx:id="addReader" layoutX="637.0" layoutY="187.0" mnemonicParsing="false" onAction="#addReaderClick" prefHeight="25.0" prefWidth="75.0" text="Добавить" />
+                        <Button fx:id="saveReader" layoutX="725.0" layoutY="187.0" mnemonicParsing="false" onAction="#saveReaderClick" prefHeight="25.0" prefWidth="75.0" text="Сохранить" />
+                        <Button fx:id="deleteReader" layoutX="811.0" layoutY="187.0" mnemonicParsing="false" onAction="#deleteReaderClick" prefHeight="25.0" prefWidth="75.0" text="Удалить" />
+                        <TextField fx:id="patronymicEdit" layoutX="637.0" layoutY="150.0" prefHeight="25.0" prefWidth="250.0" promptText="Отчество" />
+                        <Label fx:id="idLabel1" layoutX="636.0" layoutY="63.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Ареда">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="loanTable" layoutX="8.0" layoutY="8.0" minWidth="-Infinity" onMouseClicked="#getSelectedLoan" prefHeight="556.0" prefWidth="620.0">
+                           <columns>
+                              <TableColumn fx:id="loanID" minWidth="-Infinity" prefWidth="27.0" resizable="false" text="id" />
+                              <TableColumn fx:id="loanReader" prefWidth="149.0" resizable="false" text="Читатель" />
+                              <TableColumn fx:id="loanBook" prefWidth="245.0" resizable="false" text="Книга" />
+                              <TableColumn fx:id="loanDate" prefWidth="110.0" resizable="false" text="Дата" />
+                              <TableColumn fx:id="loanReturn" prefWidth="88.0" text="Возвращено" />
+                           </columns>
+                        </TableView>
+                        <TextField fx:id="loanSearch" layoutX="636.0" layoutY="8.0" prefHeight="25.0" prefWidth="250.0" promptText="Поиск..." />
+                        <Button fx:id="addLoan" layoutX="637.0" layoutY="187.0" mnemonicParsing="false" onAction="#addLoanClick" prefHeight="25.0" prefWidth="75.0" text="Добавить" />
+                        <Button fx:id="saveReader1" layoutX="724.0" layoutY="187.0" mnemonicParsing="false" onAction="#saveLoanClick" prefHeight="25.0" prefWidth="75.0" text="Сохранить" />
+                        <Button fx:id="deleteReader1" layoutX="811.0" layoutY="187.0" mnemonicParsing="false" onAction="#deleteLoanClick" prefHeight="25.0" prefWidth="75.0" text="Удалить" />
+                        <Label fx:id="idLabel11" layoutX="636.0" layoutY="63.0" />
+                        <DatePicker fx:id="loanDatePicker" layoutX="638.0" layoutY="127.0" prefHeight="25.0" prefWidth="250.0" />
+                        <ChoiceBox fx:id="loanReaderChoice" layoutX="637.0" layoutY="59.0" prefHeight="25.0" prefWidth="249.0" />
+                        <ChoiceBox fx:id="loanBookChoice" layoutX="637.0" layoutY="93.0" prefHeight="25.0" prefWidth="249.0" />
+                        <CheckBox fx:id="loanReturnBox" layoutX="638.0" layoutY="161.0" mnemonicParsing="false" text="Возвращено" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
